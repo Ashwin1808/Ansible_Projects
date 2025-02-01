@@ -1,19 +1,21 @@
 variable "aws_region" {
-    description = "default free tier region"
-    default = "us-east-1"
-}
-
-variable "instance_type" {
-    description = "aws t2 micro instance free instance"
-    default = "t2.micro"
+  description = "AWS region"
+  type        = string
+  default     = "us-east-1"
 }
 
 variable "ami_id" {
-    default = "ami-04b4f1a9cf54c11d0"
-  
+  description = "AMI ID for the EC2 instance"
+  type        = string
+}
+
+variable "instance_type" {
+  description = "EC2 instance type"
+  type        = string
+  default     = "t2.micro"
 }
 
 variable "key_name" {
-    description = "login with key-pair"
-    default = "new_key"
+  description = "Name of the SSH key pair"
+  type        = string
 }
