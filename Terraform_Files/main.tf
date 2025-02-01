@@ -24,8 +24,6 @@ resource "aws_instance" "web_server" {
 
 resource "aws_security_group" "web_sg" {
   name   = "web_sg"
-  vpc_id = var.vpc_id  # Ensure this is set in `variables.tf` or remove if using the default VPC
-
   dynamic "ingress" {
     for_each = [
       { from_port = 22, to_port = 22, protocol = "tcp", cidr_blocks = ["0.0.0.0/0"] },
